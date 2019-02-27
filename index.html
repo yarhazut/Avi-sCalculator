@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Avi's Calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>הכנס מספרים</h1>
+מספר 1  : <input type="text" id="num1"><br>
+מספר 2  : <input type="text" id="num2"><br>
+מספר 3  : <input type="text" id="num3"><br>
+מספר 4  : <input type="text" id="num4"><br>
+מספר 5  : <input type="text" id="num5"><br>
+מספר 6  : <input type="text" id="num6"><br>
+מספר 7  : <input type="text" id="num7"><br>
+מספר 8  : <input type="text" id="num8"><br>
+מספר 9  : <input type="text" id="num9"><br>
+מספר 10: <input type="text" id="num10"><br>
+<br></br>
+<button type="button" >חישוב</button>
+<br></br>
+מרחק מ-0: <p id="result"></p>
+
+<script>
+  $(document).ready(function(){
+  $("button").click(function(){
+    var numbers = [];
+    var result=0;
+   numbers[0] = document.getElementById("num1").value;
+   numbers[1] = document.getElementById("num2").value;
+   numbers[2] = document.getElementById("num3").value;
+   numbers[3] = document.getElementById("num4").value;
+   numbers[4] = document.getElementById("num5").value;
+   numbers[5] = document.getElementById("num6").value;
+   numbers[6] = document.getElementById("num7").value;
+   numbers[7] = document.getElementById("num8").value;
+   numbers[8] = document.getElementById("num9").value;
+   numbers[9] = document.getElementById("num10").value;
+
+   for (var i=0; i< 10; i++){
+     if (numbers[i].length!=0)
+      numbers[i] = parseFloat(numbers[i]);
+      else 
+      numbers[i] = 0;
+   }
+
+     for (var i=0; i< 10; i++){
+      result = result + numbers[i];
+   }
+    document.getElementById("result").innerHTML = result;
+  });
+});
+</script>
+</body>
+</html>
